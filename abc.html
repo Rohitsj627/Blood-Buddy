@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blood Receiver Information Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #f2f2f2;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+        text-shadow: 0px 0px 2px #999;
+        font-weight: bold;
+        font-size: 36px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    input[type=text], input[type=number], select, textarea {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f2f2f2;
+        color: #333;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    input[type=text]:focus, input[type=number]:focus, select:focus, textarea:focus {
+        outline: none;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+    }
+    
+    select option[disabled] {
+        color: #ccc
+    
+    
+</style>
+<body>
+	<h1>Blood Receiver Information Form</h1>
+	<form action="#" method="post" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required>
+
+		<label for="age">Age:</label>
+		<input type="number" id="age" name="age" required>
+
+		<label for="bloodtype">Blood Type:</label>
+		<select id="bloodtype" name="bloodtype">
+			<option value="A+">A+</option>
+			<option value="A-">A-</option>
+			<option value="B+">B+</option>
+			<option value="B-">B-</option>
+			<option value="AB+">AB+</option>
+			<option value="AB-">AB-</option>
+			<option value="O+">O+</option>
+			<option value="O-">O-</option>
+		</select>
+
+		<label for="contact">Contact Information:</label>
+		<textarea id="contact" name="contact" required></textarea>
+
+		<input type="submit" value="Submit">
+	</form>
+
+	<script src="script.js">
+        function validateForm() {
+            // get form input values
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var bloodtype = document.getElementById("bloodtype").value;
+            var contact = document.getElementById("contact").value;
+        
+            // validate form input
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (age == "") {
+                alert("Age must be filled out");
+                return false;
+            }
+            if (bloodtype == "") {
+                alert("Blood type must be selected");
+                return false;
+            }
+            if (contact == "") {
+                alert("Contact information must be filled out");
+                return false;
+            }
+            return true;
+        }
+        
+    </script>
+</body>
+</html>
